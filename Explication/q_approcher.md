@@ -21,7 +21,8 @@ $$
 
 ## Mise à jour des poids
 
-Lorsqu’un agent observe une transition \((s, a, r, s')\), il met à jour les poids pour réduire l’erreur entre la valeur Q estimée et l’échantillon observé :
+Lorsqu’un agent observe une transition $(s, a, r, s')$
+, il met à jour les poids pour réduire l’erreur entre la valeur Q estimée et l’échantillon observé :
 
 $$
 w_i \leftarrow w_i + \alpha \left[ \underbrace{r + \gamma \max_{a'} Q(s',a')}_{\text{target}} - Q(s,a) \right] f_i(s,a)
@@ -33,7 +34,8 @@ $$
 - $Q(s,a)$ : estimation actuelle
  
 
-Cette mise à jour rapproche \(Q(s,a)\) de la valeur réelle observée tout en adaptant les poids des features.
+Cette mise à jour rapproche $Q(s,a)$
+ de la valeur réelle observée tout en adaptant les poids des features.
 
 ---
 
@@ -45,7 +47,7 @@ Cette mise à jour rapproche \(Q(s,a)\) de la valeur réelle observée tout en a
    - présence d’obstacles  
    - direction optimale pour atteindre la sortie  
 
-2. **Initialiser les poids** \(w_i = 0\) au départ.  
+2. **Initialiser les poids** $(w_i = 0\)$ au départ.  
 
 3. **Calculer Q(s,a)** :  
    Combiner linéairement les features et leurs poids :  
