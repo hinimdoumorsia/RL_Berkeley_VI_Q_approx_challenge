@@ -7,9 +7,9 @@ Lorsque l’espace d’états est trop grand, cette approche devient impossible 
 
 L’**Approximate Q-Learning** (ou Q-learning avec features) permet de représenter la valeur Q d’une action dans un état comme une combinaison linéaire de **features** :
 
-\[
+$$
 Q(s, a) = \sum_i w_i \cdot f_i(s, a)
-\]
+$$
 
 - \(s\) : état courant  
 - \(a\) : action possible dans l’état \(s\)  
@@ -22,16 +22,16 @@ Q(s, a) = \sum_i w_i \cdot f_i(s, a)
 
 Lorsqu’un agent observe une transition \((s, a, r, s')\), il met à jour les poids pour réduire l’erreur entre la valeur Q estimée et l’échantillon observé :
 
-\[
+$$
 w_i \leftarrow w_i + \alpha \left[ \underbrace{r + \gamma \max_{a'} Q(s',a')}_{\text{target}} - Q(s,a) \right] f_i(s,a)
-\]
+$$
 
 - \(\alpha\) : taux d’apprentissage (learning rate)  
 - \(\gamma\) : facteur d’actualisation (discount factor)  
 - \(r + \gamma \max_{a'} Q(s',a')\) : estimation de la valeur cible  
 - \(Q(s,a)\) : estimation actuelle  
 
-Cette mise à jour rapproche Q(s,a) de la valeur réelle observée tout en adaptant les poids des features.
+Cette mise à jour rapproche \(Q(s,a)\) de la valeur réelle observée tout en adaptant les poids des features.
 
 ---
 
@@ -47,13 +47,13 @@ Cette mise à jour rapproche Q(s,a) de la valeur réelle observée tout en adapt
 
 3. **Calculer Q(s,a)** :  
    Combiner linéairement les features et leurs poids :  
-   \[
+   $$
    Q(s, a) = \sum_i w_i \cdot f_i(s, a)
-   \]
+   $$
 
 4. **Choisir l’action** :  
    - Avec probabilité \(\epsilon\) : action aléatoire (exploration)  
-   - Sinon : action qui maximise Q(s,a) (exploitation)  
+   - Sinon : action qui maximise \(Q(s,a)\) (exploitation)  
 
 5. **Mettre à jour les poids** après chaque transition avec la formule de mise à jour ci-dessus.
 
