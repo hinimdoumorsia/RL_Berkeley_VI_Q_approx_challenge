@@ -51,9 +51,7 @@ Cette mise à jour rapproche $Q(s,a)$
 
 3. **Calculer Q(s,a)** :  
    Combiner linéairement les features et leurs poids :  
-   $$
-   Q(s, a) = \sum_i w_i \cdot f_i(s, a)
-   $$
+   $$Q(s, a) = \sum_i w_i \cdot f_i(s, a)$$
 
 4. **Choisir l’action** :  
    - Avec probabilité $\epsilon$ : action aléatoire (exploration)  
