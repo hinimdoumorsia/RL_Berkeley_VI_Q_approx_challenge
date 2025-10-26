@@ -11,10 +11,11 @@ $$
 Q(s, a) = \sum_i w_i \cdot f_i(s, a)
 $$
 
-- \(s\) : état courant  
-- \(a\) : action possible dans l’état \(s\)  
-- \(f_i(s, a)\) : valeur de la feature \(i\) pour la paire \((s,a)\)  
-- \(w_i\) : poids associé à la feature \(i\)  
+- $s$ : état courant  
+- $a$ : action possible dans l’état $s$  
+- $f_i(s, a)$ : valeur de la feature $i$ pour la paire $(s,a)$  
+- $w_i$ : poids associé à la feature $i$
+ 
 
 ---
 
@@ -26,10 +27,11 @@ $$
 w_i \leftarrow w_i + \alpha \left[ \underbrace{r + \gamma \max_{a'} Q(s',a')}_{\text{target}} - Q(s,a) \right] f_i(s,a)
 $$
 
-- \(\alpha\) : taux d’apprentissage (learning rate)  
-- \(\gamma\) : facteur d’actualisation (discount factor)  
-- \(r + \gamma \max_{a'} Q(s',a')\) : estimation de la valeur cible  
-- \(Q(s,a)\) : estimation actuelle  
+- $\alpha$ : taux d’apprentissage (learning rate)  
+- $\gamma$ : facteur d’actualisation (discount factor)  
+- $r + \gamma \max_{a'} Q(s',a')$ : estimation de la valeur cible  
+- $Q(s,a)$ : estimation actuelle
+ 
 
 Cette mise à jour rapproche \(Q(s,a)\) de la valeur réelle observée tout en adaptant les poids des features.
 
@@ -52,8 +54,9 @@ Cette mise à jour rapproche \(Q(s,a)\) de la valeur réelle observée tout en a
    $$
 
 4. **Choisir l’action** :  
-   - Avec probabilité \(\epsilon\) : action aléatoire (exploration)  
-   - Sinon : action qui maximise \(Q(s,a)\) (exploitation)  
+   - Avec probabilité $\epsilon$ : action aléatoire (exploration)  
+   - Sinon : action qui maximise $Q(s,a)$ (exploitation)
+ 
 
 5. **Mettre à jour les poids** après chaque transition avec la formule de mise à jour ci-dessus.
 
